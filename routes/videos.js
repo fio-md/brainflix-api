@@ -89,6 +89,7 @@ router.delete("/:id/comments/:commentId", validate, (req, res) => {
   const commentIndex = commentArray.findIndex((comment) => comment.id === commentId);
   commentArray.splice(commentIndex, 1);
   updateData();
+  res.status(200).send(`Comment deleted`);
 });
 
 export default router;
